@@ -1,0 +1,9 @@
+.layoutHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--color-gray-300);
+}
