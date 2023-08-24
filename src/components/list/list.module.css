@@ -1,3 +1,7 @@
 .listCard {
   display: flex;
+  flex-direction: column;
+}
+.listCard img {
+  object-fit: contain;
 }

@@ -1,9 +1,18 @@
 .layoutHeader {
-  width: 100%;
+  width: max-content;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
+  margin: auto 0;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 32px;
   border-radius: 16px;
-  background-color: var(--color-gray-300);
+  background-color: var(--color-primary-100);
+  position: fixed;
+  transform: translateY(100%);
+}
+.layoutHeader svg {
+  width: 24px;
+  height: 24px;
+  filter: invert(0.9);
 }
