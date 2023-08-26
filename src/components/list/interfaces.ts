@@ -30,6 +30,7 @@ const cardSchema = z.object({
   def: z.number().optional(),
   level: z.number().optional(),
   archetype: z.string(),
+  attribute: z.string().optional(),
   card_sets: cardSetSchema.array(),
   card_images: cardImageSchema.array(),
   card_prices: cardPricesSchema.array(),

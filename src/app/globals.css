@@ -1,6 +1,9 @@
 :root {
   --color-primary: #c72931;
   --color-primary-100: #f4583d;
+
+  --color-secundary: #612a17;
+
   --color-gray-500: #283035;
   --color-gray-400: #303a40;
   --color-gray-300: #354249;
@@ -16,7 +19,7 @@
 }
 body {
   width: 100%;
-  padding: 16px;
+  padding: 16px 0 16px 16px;
   background-color: var(--color-gray-500);
   display: flex;
   align-items: flex-start;

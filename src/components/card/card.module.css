@@ -1,6 +1,15 @@
 .card {
-  width: 35%;
-  filter: drop-shadow(2px 4px 6px black);
+  width: 75%;
+  background-color: var(--color-secundary);
+  padding: 8px;
+  color: var(--color-gray-100);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
 }
 .card:hover {
   transform: scale(1.08);
@@ -12,4 +21,39 @@
   object-fit: contain;
   height: auto;
   width: 100%;
+}
+.card h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: 100%;
+}
+.card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+}
+.card div span {
+  text-transform: lowercase;
+  background-color: var(--color-primary);
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+.card .divAtk {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card .divStars {
+  display: flex;
+  flex-direction: row;
+}
+.card .divStars svg {
+  width: 12px;
+  height: 12px;
 }
