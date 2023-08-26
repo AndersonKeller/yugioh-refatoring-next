@@ -1,15 +1,13 @@
-import { Header } from "@/components/header/Header";
-import { List } from "@/components/list/List";
+"use client";
 
-import "./page.module.css";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import Loading from "./loading";
 
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <main>
-        <List />
-      </main>
-    </>
-  );
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/page/1");
+  }, []);
+  return <Loading />;
 }

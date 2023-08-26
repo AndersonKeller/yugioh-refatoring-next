@@ -1,4 +1,4 @@
-import { HiOutlineStar } from "react-icons/hi";
+import { AiFillStar } from "react-icons/ai";
 interface StarsProps {
   levels: number;
 }
@@ -8,6 +8,6 @@ export function Stars({ levels }: StarsProps) {
     levelsArray.push(i);
   }
   return levelsArray.map((item, index) => {
-    return <HiOutlineStar key={index} />;
+    return <AiFillStar key={index} />;
   });
 }
