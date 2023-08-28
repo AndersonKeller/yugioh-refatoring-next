@@ -2,20 +2,19 @@
 import Link from "next/link";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 
-import { useParams } from "next/navigation";
+import { pageStore } from "@/store/store";
+
 export function Nav() {
-  const params = useParams();
-  const prevPage = +params.number >= 2 ? +params.number - 1 : 1;
-  const nextPage: number = +params.number + 1;
+  const { page } = pageStore();
   return (
     <nav>
-      <Link href={`/page/${prevPage}`}>
+      <Link href={`/page/${page > 1 ? page - 1 : 1}`}>
         <BiSolidLeftArrow />
       </Link>
       <p>
-        {params.number} <span>/</span> {nextPage}
+        {page} <span>/</span> {+page + 1}
       </p>
-      <Link href={`/page/${nextPage}`}>
+      <Link href={`/page/${page + 1}`}>
         <BiSolidRightArrow />
       </Link>
     </nav>
