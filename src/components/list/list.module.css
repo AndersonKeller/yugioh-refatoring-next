@@ -5,4 +5,22 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   margin-top: 90px;
+  width: 100%;
+}
+.fakeList {
+  width: 75%;
+  background-color: var(--color-secundary);
+  border-radius: 4px;
+  height: 72px;
+  display: flex;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.fakeList::before {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
 }

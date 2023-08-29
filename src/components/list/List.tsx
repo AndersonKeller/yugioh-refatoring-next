@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+import Loading from "@/app/loading";
 import { api } from "@/service/api";
 import { cardListStore, pageStore } from "@/store/store";
 import { useParams } from "next/navigation";
@@ -10,6 +11,7 @@ export function List() {
   const params = useParams();
   const { setPage } = pageStore();
   const { setCards, cards } = cardListStore();
+
   async function getList() {
     setPage(+params.number);
     const res = await api.get(`?num=30&offset=${+params.number * 30 - 30}`);
@@ -17,16 +19,14 @@ export function List() {
     setCards(await res.data.data);
   }
   useEffect(() => {
-    setTimeout(() => {
-      getList();
-    }, 500);
+    setCards([]);
+    getList();
   }, [params.number]);
 
   return (
     <ul className={styles.listCard}>
-      {cards.map((card) => (
-        <Card card={card} key={card.id} />
-      ))}
+      {cards.length == 0 && <Loading />}
+      {cards && cards.map((card, index) => <Card card={card} key={index} />)}
     </ul>
   );
 }
