@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { Cards } from "../list/interfaces";
 import { Stars } from "./Stars";
 import styles from "./card.module.css";
@@ -38,7 +37,7 @@ export function Card({ card }: CardProps) {
         href={"/card/" + card.name}
         id={card.id.toString()}
       >
-        Ver <AiOutlineArrowRight />
+        Ver
       </Link>
     </li>
   );

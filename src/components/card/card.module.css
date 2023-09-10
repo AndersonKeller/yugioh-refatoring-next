@@ -94,10 +94,10 @@
   background-color: var(--color-primary);
   border-radius: 24px;
   position: fixed;
-  top: 0;
+  top: 6px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
-  transform: translateX(100%);
+  transform: translateX(200%);
   /* display: none; */
 }
