@@ -16,8 +16,9 @@ export default function PageLayout({
   return (
     <>
       <Header />
-      <Aside />
+
       <main>
+        <Aside />
         <List />
       </main>
     </>

@@ -11,7 +11,12 @@ export default async function CardPage({ params }: CardPageProps) {
   const card: Cards = res.data.data[0];
   console.log(card);
   return (
-    <main className={style.mainContainer}>
+    <main
+      className={style.mainContainer}
+      style={{
+        backgroundImage: `url(${card.card_images[0].image_url_cropped})`,
+      }}
+    >
       <Image
         className={style.cardImage}
         alt={card.name}

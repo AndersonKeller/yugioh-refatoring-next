@@ -4,6 +4,10 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: contain;
+  padding: 16px;
 }
 .cardImage {
   height: max-content;
