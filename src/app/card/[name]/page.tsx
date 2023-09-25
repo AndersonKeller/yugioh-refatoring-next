@@ -21,7 +21,7 @@ export default async function CardPage({ params }: CardPageProps) {
         className={style.cardImage}
         alt={card.name}
         src={card.card_images[0].image_url}
-        width={400}
+        width={500}
         height={700}
       />
     </main>
