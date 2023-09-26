@@ -2,7 +2,7 @@
 "use client";
 import Loading from "@/app/loading";
 import { api } from "@/service/api";
-import { cardListStore, pageStore } from "@/store/store";
+import { cardListStore, filterStore, pageStore } from "@/store/store";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import { Card } from "../card/Card";
@@ -11,17 +11,23 @@ export function List() {
   const params = useParams();
   const { setPage } = pageStore();
   const { setCards, cards } = cardListStore();
+  const { filter } = filterStore();
 
   async function getList() {
     setPage(+params.number);
-    const res = await api.get(`?num=30&offset=${+params.number * 30 - 30}`);
+    const res =
+      filter == ""
+        ? await api.get(`?num=30&offset=${+params.number * 30 - 30}`)
+        : await api.get(
+            `?num=30&type=${filter}&offset=${+params.number * 30 - 30}`
+          );
 
     setCards(await res.data.data);
   }
   useEffect(() => {
     setCards([]);
     getList();
-  }, [params.number]);
+  }, [params.number, filter]);
 
   return (
     <ul className={styles.listCard}>

@@ -19,6 +19,9 @@
   height: 24px;
   filter: invert(0.9);
 }
+.layoutAside button {
+  background-color: transparent;
+}
 @media (min-width: 1100px) {
   .layoutAside {
     left: 15%;
