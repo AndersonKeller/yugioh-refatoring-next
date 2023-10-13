@@ -10,7 +10,7 @@ interface CardPageProps {
 export default async function CardPage({ params }: CardPageProps) {
   const res = await api.get(`?name=${params.name}`);
   const card: Cards = res.data.data[0];
-  console.log(card);
+  // console.log(card);
   return (
     <main
       className={style.mainContainer}
@@ -18,13 +18,17 @@ export default async function CardPage({ params }: CardPageProps) {
         backgroundImage: `url(${card.card_images[0].image_url_cropped})`,
       }}
     >
-      <Image
-        className={style.cardImage}
-        alt={card.name}
-        src={card.card_images[0].image_url}
-        width={500}
-        height={700}
-      />
+      <figure>
+        <Image
+          className={style.cardImage}
+          alt={card.name}
+          src={card.card_images[0].image_url}
+          width={500}
+          height={700}
+        />
+        <div className={style.texture}></div>
+      </figure>
+
       <InfosNav />
     </main>
   );
