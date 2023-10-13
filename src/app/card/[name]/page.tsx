@@ -1,3 +1,4 @@
+import { InfosNav } from "@/components/infos/Infosnav";
 import { Cards } from "@/components/list/interfaces";
 import { api } from "@/service/api";
 import Image from "next/image";
@@ -24,6 +25,7 @@ export default async function CardPage({ params }: CardPageProps) {
         width={500}
         height={700}
       />
+      <InfosNav />
     </main>
   );
 }

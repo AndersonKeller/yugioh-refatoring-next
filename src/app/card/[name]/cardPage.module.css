@@ -8,9 +8,16 @@
   background-attachment: fixed;
   background-size: contain;
   padding: 16px;
+  flex-direction: column;
+  gap: 32px;
 }
 .cardImage {
   height: max-content;
   width: 100%;
   max-width: 500px;
+}
+@media (min-width: 639px) {
+  .mainContainer {
+    background-size: cover;
+  }
 }
