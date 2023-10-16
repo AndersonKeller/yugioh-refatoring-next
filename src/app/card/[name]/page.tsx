@@ -8,9 +8,9 @@ interface CardPageProps {
 }
 
 export default async function CardPage({ params }: CardPageProps) {
-  const res = await api.get(`?name=${params.name}`);
+  const res = await api.get(`?name=${params.name.replaceAll("!&", "/")}`);
   const card: Cards = res.data.data[0];
-  // console.log(card);
+
   return (
     <main
       className={style.mainContainer}
@@ -23,13 +23,13 @@ export default async function CardPage({ params }: CardPageProps) {
           className={style.cardImage}
           alt={card.name}
           src={card.card_images[0].image_url}
-          width={500}
+          width={400}
           height={700}
         />
         <div className={style.texture}></div>
       </figure>
 
-      <InfosNav />
+      <InfosNav card={card} />
     </main>
   );
 }

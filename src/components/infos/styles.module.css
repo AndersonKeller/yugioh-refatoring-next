@@ -4,16 +4,17 @@
   width: 90%;
   margin: 0 auto;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   position: absolute;
   bottom: 0;
   padding-bottom: 16px;
+  max-width: 700px;
 }
 .section div {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 16px 0;
+  padding: 8px 0;
   backdrop-filter: blur(6px);
   box-shadow: 1px 1px 6px 2px var(--color-gray-500);
   border-radius: 32px;
@@ -21,6 +22,17 @@
   -moz-border-radius: 32px;
   -ms-border-radius: 32px;
   -o-border-radius: 32px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.section div h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray-100);
+  filter: drop-shadow(2px 4px 6px black);
+  text-shadow: 2px 2px 2px black;
 }
 .section div svg {
   filter: invert(1);
@@ -43,4 +55,12 @@
   font-weight: 800;
   font-size: 1rem;
   border: 6px double var(--color-gray-100);
+}
+@media (min-width: 400px) {
+  .section {
+    position: relative;
+  }
+  .section div h3 {
+    font-size: 18px;
+  }
 }

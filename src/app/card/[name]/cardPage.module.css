@@ -10,6 +10,8 @@
   padding: 16px;
   flex-direction: column;
   gap: 32px;
+  animation: openMain 2s ease;
+  -webkit-animation: openMain 2s ease;
 }
 .cardImage {
   height: max-content;
@@ -20,10 +22,11 @@
 }
 .mainContainer figure {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   position: relative;
-  animation: rotate_500 6s infinite;
-  -webkit-animation: rotate_500 6s infinite;
+  animation: rotate_500 8s infinite;
+  animation-delay: 2s;
+  -webkit-animation: rotate_500 8s infinite;
   transform: translate3d(0, 0, 0);
   overflow: hidden;
   border-radius: 8px;
@@ -34,8 +37,9 @@
 }
 
 .texture {
-  animation: texture 6s infinite;
-  -webkit-animation: texture 6s infinite;
+  animation: texture 4s infinite;
+  -webkit-animation: texture 4s infinite;
+  animation-delay: 2s;
   position: absolute;
   top: 0;
   left: 0;
@@ -89,5 +93,13 @@
     -moz-transform: translate3d(-50%, 0, 0);
     -ms-transform: translate3d(-50%, 0, 0);
     -o-transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes openMain {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -34,7 +34,7 @@ export function Card({ card }: CardProps) {
       <Link
         hidden
         className={styles.seeMore}
-        href={"/card/" + card.name}
+        href={"/card/" + card.name.replaceAll("/", "!&")}
         id={card.id.toString()}
       >
         Ver
