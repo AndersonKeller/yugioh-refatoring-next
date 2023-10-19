@@ -37,6 +37,7 @@ const cardSchema = z.object({
 });
 
 export type Cards = z.infer<typeof cardSchema>;
+export type Prices = z.infer<typeof cardPricesSchema>;
 // {
 //   id: 44256816,
 //   name: '1st Movement Solo',
